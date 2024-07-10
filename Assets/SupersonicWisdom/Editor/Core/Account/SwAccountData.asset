@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde5b51eef6a4560b2a2442b047a9a7, type: 3}
+  m_Name: SwAccountData
+  m_EditorClassIdentifier: 
+  titlesList:
+  - games: []
+    id: 
+    name: --- select ---
+  - games:
+    - adMobId: 
+      bundleId: 
+      facebookAppId: 
+      gameAnalyticsKey: d2857fd7296c871ca994e312466600b1
+      gameAnalyticsSecret: 4327c336aff2e1597aab3dad0aae9ffe09da2743
+      id: 296dcb62-ac04-48b4-a99e-09885fa7f67f
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: 
+    id: ff4e790b-ac5a-46c0-977b-4c214332b7fa
+    name: Color Crowd Arcade
+  - games:
+    - adMobId: 
+      bundleId: com.mssgames.pimplesqueeze
+      facebookAppId: 1169198103901793
+      gameAnalyticsKey: 0d8b19844d6d592c6fdc33ef607f72c2
+      gameAnalyticsSecret: 0598b21fae00660252f9401adf9844ab0c7516cf
+      id: 14a27903-5753-43fa-ae1e-862ca7bf4c56
+      isAppKey: 
+      os: ios
+      platform: app_store
+      storeId: id1624909787
+    - adMobId: 
+      bundleId: com.SoftwareKingdom.PimpleSqueeze
+      facebookAppId: 1169198103901793
+      gameAnalyticsKey: d30476423b25ca309db40ad0655a99dc
+      gameAnalyticsSecret: 73b620baac0094086af4d49a70660ffc862c1447
+      id: cfff3258-7f98-44dd-be8d-41de847fde21
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.SoftwareKingdom.PimpleSqueeze
+    id: c01fbedb-17ed-4974-9a99-6957f72e0517
+    name: Pimple Squeeze
+  - games:
+    - adMobId: 
+      bundleId: 
+      facebookAppId: 
+      gameAnalyticsKey: 
+      gameAnalyticsSecret: 
+      id: a7c76d3b-54c8-4adf-b6f2-36f51e20f2c0
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: 
+    id: f160e9e6-99b8-4977-8f83-29b25138908b
+    name: Potion Master!
+  - games:
+    - adMobId: 
+      bundleId: com.SoftwareKingdom.PumpemAll
+      facebookAppId: 577581867283928
+      gameAnalyticsKey: c2f261cfa3b9cee838639eaea33237b8
+      gameAnalyticsSecret: 362d7a9e57c9e56bb5b99e0341645f9149e57032
+      id: c1f9e616-159e-4895-b700-b5f41f4f7487
+      isAppKey: 
+      os: android
+      platform: google_play
+      storeId: com.SoftwareKingdom.PumpemAll
+    id: 83788c54-0f4e-47da-b07c-baaa6dca609f
+    name: Pump'em All!
+  integrationGuideUrl: 

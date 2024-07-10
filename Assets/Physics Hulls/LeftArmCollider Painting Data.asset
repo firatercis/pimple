@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de965f2e710c1c489ead8e62cd25da0, type: 3}
+  m_Name: LeftArmCollider Painting Data
+  m_EditorClassIdentifier: 
+  hullData: {fileID: 11400000, guid: f3d9e4464c91fb04a87995c1ffc89fd3, type: 2}
+  sourceMesh: {fileID: -603417666377648217, guid: 85c21ae367d231e4b8bd80f1ef6e3ce5,
+    type: 3}
+  activeHull: 0
+  faceThickness: 0.1
+  hulls:
+  - name: Hull 1
+    isVisible: 1
+    type: 1
+    colour: {r: 0, g: 1, b: 1, a: 0.3}
+    material: {fileID: 0}
+    enableInflation: 0
+    inflationAmount: 0.01
+    isTrigger: 0
+    isChildCollider: 0
+    selectedFaces: 3b0000003c00000042000000440000004a0000004b00000052000000530000005a0000005c00000062000000640000006a0000006c0000007200000074000000750000000f0000000e00000010000000110000001300000016000000180000001e0000002000000022000000280000002a0000003100000033000000390000003e00000045000000460000004f0000005100000057000000590000005f000000610000003d00000035000000340000002d00000065000000660000006d0000006e0000007a0000007d0000007f00000001000000000000000200000005000000090000000a000000190000001a00000023000000240000002b0000002c00000026000000
+    collisionMesh: {fileID: -6399047150042531277, guid: f3d9e4464c91fb04a87995c1ffc89fd3,
+      type: 2}
+    faceCollisionMesh: {fileID: 0}
+    collisionBox:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    hasColliderError: 0
+    numColliderFaces: 82

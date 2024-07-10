@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NeedleOverrideController
+  m_Controller: {fileID: 9100000, guid: daa88b17daa94144091b9a9a8c05231b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3cb839437a2d7814f8e8eef63196b4dd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 83fe0275c7b8c0a40ac31d8556994188, type: 2}

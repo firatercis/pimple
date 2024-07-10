@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de965f2e710c1c489ead8e62cd25da0, type: 3}
+  m_Name: HospitalBedGood Painting Data
+  m_EditorClassIdentifier: 
+  hullData: {fileID: 11400000, guid: 8e29692e2f180e2448c8318ec05b417d, type: 2}
+  sourceMesh: {fileID: -1602977857172236656, guid: ab8debdc3a7895944a53c250ba6a3648,
+    type: 3}
+  activeHull: 0
+  faceThickness: 0.1
+  hulls:
+  - name: Hull 1
+    isVisible: 1
+    type: 1
+    colour: {r: 0, g: 1, b: 1, a: 0.3}
+    material: {fileID: 0}
+    enableInflation: 0
+    inflationAmount: 0.01
+    isTrigger: 0
+    isChildCollider: 0
+    selectedFaces: 9f180000ba180000bd180000b9180000b51800005b1800005d180000601800009c1800009d180000ab180000b3180000b4180000b71800005518000064180000651800005e1800005c1800006318000073180000621800008e180000581800008f180000571800004d18000094180000921800004a1800004b1800004c1800005218000053180000a0180000a2180000a11800009a1800009b180000ad180000b1180000aa180000a8180000c1180000bf180000c0180000c6180000c5180000c3180000bb180000ca180000c9180000c4180000c2180000cc180000be180000bc180000b0180000b2180000b6180000b8180000af180000ac180000591800009e180000
+    collisionMesh: {fileID: -3566362671089055509, guid: 8e29692e2f180e2448c8318ec05b417d,
+      type: 2}
+    faceCollisionMesh: {fileID: 0}
+    collisionBox:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    hasColliderError: 0
+    numColliderFaces: 58
