@@ -1,7 +1,5 @@
-using Newtonsoft.Json.Linq;
-using SoftwareKingdom.Static;
-using System.Collections;
-using System.Collections.Generic;
+
+
 using UnityEngine;
 
 public class PimpleSound : MonoBehaviour

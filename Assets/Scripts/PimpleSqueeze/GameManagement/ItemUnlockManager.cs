@@ -1,4 +1,4 @@
-using GameAnalyticsSDK;
+//using GameAnalyticsSDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -142,7 +142,7 @@ public class ItemUnlockManager : MonoBehaviour
         itemUnlockPanel.DisplayItemUnlockPanel(currentItemIndex, newUnlockPercent, oldUnlockPercent);
         if(newUnlockPercent >= 1.0f)
         {
-            GameAnalytics.NewDesignEvent("unlocked:" + unlockableItems[currentItemIndex].itemName, 0);
+         //   GameAnalytics.NewDesignEvent("unlocked:" + unlockableItems[currentItemIndex].itemName, 0);
         }
         oldUnlockPercent = newUnlockPercent;
         oldItemIndex = currentItemIndex;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using GameAnalyticsSDK;
+//using GameAnalyticsSDK;
 
 public class ClinicUpgradeManager : MonoBehaviour
 {
@@ -106,7 +106,7 @@ public class ClinicUpgradeManager : MonoBehaviour
             clinicLevel++;
             PlayerPrefs.SetInt(nameof(clinicLevel), clinicLevel);
             LoadEnvironment(clinicLevel);
-            GameAnalytics.NewDesignEvent("clinicUpgrade", clinicLevel); // TODO: GameAnalytics direct access
+         //   GameAnalytics.NewDesignEvent("clinicUpgrade", clinicLevel); // TODO: GameAnalytics direct access
         }
         return couldUpgrade;
     }

@@ -1114,7 +1114,7 @@ namespace PluginMaster
 
         private static string[] GetLoadedScenePaths()
         {
-            var countLoaded = EditorSceneManager.loadedSceneCount;
+            var countLoaded = SceneManager.loadedSceneCount;
             var loadedScenePaths = new string[countLoaded];
             for (int i = 0; i < countLoaded; i++)
                 loadedScenePaths[i] = EditorSceneManager.GetSceneAt(i).path;

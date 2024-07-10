@@ -1,4 +1,4 @@
-using GameAnalyticsSDK;
+//using GameAnalyticsSDK;
 using Obi;
 using SoftwareKingdom;
 using System;
@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour, ToolsMenuListener
             SaveItem(itemID);
             UpdateUI();
             OnItemUsed?.Invoke(itemID);
-            GameAnalytics.NewDesignEvent("used:" + items[itemID].itemName, 0);
+         //   GameAnalytics.NewDesignEvent("used:" + items[itemID].itemName, 0);
         }
         else
         {
@@ -100,7 +100,7 @@ public class Inventory : MonoBehaviour, ToolsMenuListener
     {
         progressDatabase.OnMoneySpendRequest(items[itemID].cost);
         AddItem(itemID, itemAddPerPurchase);
-        GameAnalytics.NewDesignEvent("bought:" + items[itemID].itemName, 0);
+      //  GameAnalytics.NewDesignEvent("bought:" + items[itemID].itemName, 0);
     }
 
     void SaveItem(int id)

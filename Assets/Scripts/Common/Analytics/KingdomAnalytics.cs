@@ -11,9 +11,9 @@ using UnityEngine.UIElements;
 //#if ELEPHANT
 //using ElephantSDK;
 //#endif
-#if GAME_ANALYTICS
-using GameAnalyticsSDK;
-#endif
+//#if GAME_ANALYTICS
+//using GameAnalyticsSDK;
+//#endif
 
 
 
@@ -39,14 +39,14 @@ namespace SoftwareKingdom
         public static void Init()
         {
             
-#if GAME_ANALYTICS
-            if (!initialized)
-            {
-                Debug.Log("Initialized Game Analytics");
-                initialized = true;
-                GameAnalytics.Initialize();
-            }
-#endif
+//#if GAME_ANALYTICS
+//            if (!initialized)
+//            {
+//                Debug.Log("Initialized Game Analytics");
+//                initialized = true;
+//                GameAnalytics.Initialize();
+//            }
+//#endif
         }
 
         public static void LevelCompleted(int levelIndex, params string[] parameters)
@@ -58,9 +58,9 @@ namespace SoftwareKingdom
 //            Elephant.LevelCompleted(levelIndex + 1, analyticParams);
 //#endif
 
-#if GAME_ANALYTICS
-            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete,"Level Completed", levelIndex);
-#endif
+//#if GAME_ANALYTICS
+//            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete,"Level Completed", levelIndex);
+//#endif
 
         }
 
@@ -74,9 +74,9 @@ namespace SoftwareKingdom
 //            Elephant.LevelFailed(levelIndex  + 1, analyticParams);     
 //#endif
 
-#if GAME_ANALYTICS
-            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, "Level Failed", levelIndex);
-#endif
+//#if GAME_ANALYTICS
+//            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, "Level Failed", levelIndex);
+//#endif
 
         }
 
@@ -89,19 +89,19 @@ namespace SoftwareKingdom
 //            Elephant.LevelStarted(levelIndex + 1, analyticParams);
 //#endif
 
-#if GAME_ANALYTICS
-            Init();
-            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level Started", levelIndex);
-#endif
+//#if GAME_ANALYTICS
+//            Init();
+//            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level Started", levelIndex);
+//#endif
         }
 
         public static void CustomEvent(string eventType, int levelIndex, params string[] parameters)
         {
             Debug.Log("Sending level custom event: " + levelIndex);
             PrintParams(parameters);
-#if GAME_ANALYTICS
-            GameAnalytics.NewDesignEvent(eventType, levelIndex);
-#endif
+//#if GAME_ANALYTICS
+//            GameAnalytics.NewDesignEvent(eventType, levelIndex);
+//#endif
 
             //#if ELEPHANT
             //            Params analyticParams = GetParams(parameters);
