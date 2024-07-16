@@ -1,13 +1,12 @@
 <dependencies>
   <packages>
-    <package>androidx.constraintlayout:constraintlayout:2.1.4</package>
-    <package>com.google.android.gms:play-services-ads:23.2.0</package>
-    <package>com.google.android.ump:user-messaging-platform:2.2.0</package>
+    <package>com.google.android.gms:play-services-ads:[22.3.0]</package>
+    <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
   </packages>
   <files />
   <settings>
     <setting name="androidAbis" value="arm64-v8a" />
-    <setting name="bundleId" value="com.SoftwareKingdom.PimpleSqueeze" />
+    <setting name="bundleId" value="com.softwarekingdom.pimplesqueeze" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

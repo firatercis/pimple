@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class NextCustomerCanvasManager : MonoBehaviour
 {
 
-    const string TEST_RW_AD_ID = "ca-app-pub-3940256099942544/5354046379";
-
+    //const string TEST_RW_AD_ID = "ca-app-pub-3940256099942544/5354046379";
+    const string TEST_RW_AD_ID = "ca-app-pub-6031861456314162/1304790186";
     //Settings
 
     // Connections

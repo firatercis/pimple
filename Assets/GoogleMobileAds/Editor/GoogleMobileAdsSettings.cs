@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -28,13 +27,6 @@ namespace GoogleMobileAds.Editor
                     MobileAdsSettingsFile + MobileAdsSettingsFileExtension);
                 AssetDatabase.CreateAsset(instance, assetPath);
                 AssetDatabase.SaveAssets();
-                Version agp = Version.Parse(Utils.AndroidGradlePluginVersion);
-                instance.validateGradleDependencies = true;
-                // Turn on Gradle Dependency Validation if AGP < 4.2.2
-                if (agp.Major > 4 || (agp.Major == 4 && agp.Minor >= 2 && agp.Build >= 2))
-                {
-                    instance.validateGradleDependencies = false;
-                }
             }
 
             return instance;
@@ -47,7 +39,7 @@ namespace GoogleMobileAds.Editor
         private string adMobIOSAppId = string.Empty;
 
         [SerializeField]
-        private bool enableKotlinXCoroutinesPackagingOption = true;
+        private bool delayAppMeasurementInit;
 
         [SerializeField]
         private bool optimizeInitialization;
@@ -58,9 +50,6 @@ namespace GoogleMobileAds.Editor
         [SerializeField]
         private string userTrackingUsageDescription;
 
-        [SerializeField]
-        private bool validateGradleDependencies;
-
         public string GoogleMobileAdsAndroidAppId
         {
             get { return adMobAndroidAppId; }
@@ -68,18 +57,18 @@ namespace GoogleMobileAds.Editor
             set { adMobAndroidAppId = value; }
         }
 
-        public bool EnableKotlinXCoroutinesPackagingOption
-        {
-            get { return enableKotlinXCoroutinesPackagingOption; }
-
-            set { enableKotlinXCoroutinesPackagingOption = value; }
-        }
-
         public string GoogleMobileAdsIOSAppId
         {
             get { return adMobIOSAppId; }
 
             set { adMobIOSAppId = value; }
+        }
+
+        public bool DelayAppMeasurementInit
+        {
+            get { return delayAppMeasurementInit; }
+
+            set { delayAppMeasurementInit = value; }
         }
 
         public bool OptimizeInitialization
@@ -101,13 +90,6 @@ namespace GoogleMobileAds.Editor
             get { return userTrackingUsageDescription; }
 
             set { userTrackingUsageDescription = value; }
-        }
-
-        public bool ValidateGradleDependencies
-        {
-            get { return validateGradleDependencies; }
-
-            set { validateGradleDependencies = value; }
         }
     }
 }
