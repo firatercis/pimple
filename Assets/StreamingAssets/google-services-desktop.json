@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8542590454",
+    "project_id": "pimplesqueeze-1fe18",
+    "storage_bucket": "pimplesqueeze-1fe18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8542590454:android:cf5c13bcb949fe9dada3d7",
+        "android_client_info": {
+          "package_name": "com.softwarekingdom.pimplesqueeze"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ObxAl9JInb2TIESo6z22Y3HY1QQYGNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

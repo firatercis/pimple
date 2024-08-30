@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using SoftwareKingdom;
-using TheraBytes.BetterUi;
 using Cinemachine;
 //using UnityEditor.PackageManager.UI;
-using UnityEngine.UIElements;
-using static Cinemachine.DocumentationSortingAttribute;
-using UnityEngine.Assertions;
 using DG.Tweening;
 using System.Linq.Expressions;
+using SoftwareKingdom.Analytics;
+using SoftwareKingdom.Common.InterfaceBus;
 //using GameAnalyticsSDK;
 
 
@@ -24,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     const int CHEAT_MONEY = 100000;
     const int DANGER_SQUEEZE_SOUND_INDEX = 2;
+
+    const int CLAIM_AD_FACTOR = 3;
+
     // Settings
     public bool spawnLevel = true;
     public int tutorialLevels;
@@ -217,6 +217,10 @@ public class GameManager : MonoBehaviour
         nPimpleSuccess = 0;
         nBonusPimpleHealed = 0;
         inventory.UpdateUI();
+
+        // Send level started analytics
+        IAnalytics analytics = InterfaceBus<IAnalytics>.Get();
+        analytics?.OnLevelStarted(nCustomersTotal);
     }
 
     //void EnableGameStart()
@@ -343,7 +347,8 @@ public class GameManager : MonoBehaviour
     void OnNextLevel()
     {
         PlayerPrefs.SetInt("Level", levelIndex + 1);
-        KingdomAnalytics.LevelCompleted(userProgressDatabase.levelIndex);
+        //KingdomAnalytics.LevelCompleted(userProgressDatabase.levelIndex);
+         
         //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //PlayerPrefs.SetInt("showStart", 0);
     }
@@ -600,6 +605,10 @@ public class GameManager : MonoBehaviour
         currentCustomer.OnOperationsEnd(customerSuccessValue);
         totalXP += Mathf.FloorToInt(customerSuccessValue * 100);
         PlayerPrefs.SetInt("totalXP", totalXP);
+
+        IAnalytics analytics = InterfaceBus<IAnalytics>.Get();
+        analytics?.OnLevelCompleted(nCustomersTotal);
+
         //KingdomAnalytics.LevelCompleted(nCustomersTotal);
         //SupersonicWisdom.Api.NotifyLevelCompleted(nCustomersTotal,null);
     }
@@ -614,9 +623,13 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void OnNextCustomer()
+    void OnNextCustomer(bool claimBonus = false)
     {
-       
+        
+        if (claimBonus)
+        {
+            customerEarnedMoney *= CLAIM_AD_FACTOR;
+        }
 
         currentCustomer.StandUp(bedPoint.position);
         nCustomersTotal++;

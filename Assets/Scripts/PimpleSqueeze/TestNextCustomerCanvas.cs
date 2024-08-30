@@ -36,7 +36,7 @@ public class TestNextCustomerCanvas : MonoBehaviour
         }
     }
 
-    void OnNextCustomerButtonPressed()
+    void OnNextCustomerButtonPressed(bool claimBonus = false)
     {
         Debug.Log("Next customer request");
     }

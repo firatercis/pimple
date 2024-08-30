@@ -1,7 +1,7 @@
 
 
 //#define ELEPHANT
-#define GAME_ANALYTICS
+//#define GAME_ANALYTICS
 
 using System.Collections;
 using System.Collections.Generic;

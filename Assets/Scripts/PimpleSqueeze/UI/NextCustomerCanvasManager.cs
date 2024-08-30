@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using SoftwareKingdom.Ads;
 
 public class NextCustomerCanvasManager : MonoBehaviour
 {
 
     //const string TEST_RW_AD_ID = "ca-app-pub-3940256099942544/5354046379";
     const string TEST_RW_AD_ID = "ca-app-pub-6031861456314162/1304790186";
+
     //Settings
 
     // Connections
@@ -19,11 +21,12 @@ public class NextCustomerCanvasManager : MonoBehaviour
     public TextMeshProUGUI totalMoneyText;
     public BonusFillerUI bonusFiller;
     public ResultCaptionManager resultCaptionManager;
+    public Button nextButton;
     public Button claimButton;
-    public event Action OnNextCustomerRequest;
+    public event Action<bool> OnNextCustomerRequest;
 
     public GameObject rewardedAdManagerGO;
-    private IRewardedAdManager rewardedAdManager;
+    private IAdManager rewardedAdManager;
     // State Variables dafasdf
 
     public float oldFillAmount = 0;
@@ -35,7 +38,7 @@ public class NextCustomerCanvasManager : MonoBehaviour
         InitState();
     }
     void InitConnections(){
-        rewardedAdManager = rewardedAdManagerGO.GetComponent<IRewardedAdManager>();
+        rewardedAdManager = rewardedAdManagerGO.GetComponent<IAdManager>();
     }
     void InitState(){
         oldFillAmount = 0;
@@ -56,7 +59,7 @@ public class NextCustomerCanvasManager : MonoBehaviour
         successPercentText.text = successPercent.ToString("00") + "%";
         customerEarningText.text = "$" + customerEarning.ToString();
         totalMoneyText.text = "$" + totalMoney.ToString();
-        claimButton.gameObject.SetActive(true);
+        ShowButtons();
         //float targetFillAmount = totalAcneNewValue / totalAcneFullValue;
 
         //DOTween.To(
@@ -80,12 +83,17 @@ public class NextCustomerCanvasManager : MonoBehaviour
     {
      
         oldFillAmount = 0;
-        claimButton.gameObject.SetActive(false);
+        HideButtons();
 
-        // TODO: For testing of rewarded mobile ads:
-        
+        OnNextCustomerRequest?.Invoke(false);
+    }
+
+    public void OnClaimButtonPressed() {
+        oldFillAmount = 0;
+       
+        HideButtons();
         rewardedAdManager.ShowAd();
-        OnNextCustomerRequest?.Invoke();
+        OnNextCustomerRequest?.Invoke(true);
     }
 
     public void SetBonusFillerOldValue(float oldVal)
@@ -94,7 +102,15 @@ public class NextCustomerCanvasManager : MonoBehaviour
         bonusFiller.SetOldValue(oldVal);
     }
 
+    void HideButtons() {
+        nextButton.gameObject.SetActive(false);
+        claimButton.gameObject.SetActive(false);
+    }
 
+    void ShowButtons() {
+        nextButton.gameObject.SetActive(true);
+        claimButton.gameObject.SetActive(true);
+    }
 
 }
 

@@ -23,8 +23,8 @@ public class UIManager : MonoBehaviour
                     OnGamePaused,
                     OnGameResumed,
                     OnInGameRestart,
-                    OnNextCustomer,
                     OnClinicUpgradePage;
+    public Action<bool> OnNextCustomer;
     public Action<bool, bool, bool> OnSettingsChanged;
 
 
@@ -87,6 +87,7 @@ public class UIManager : MonoBehaviour
         HideScreens();
         damageNumberManager = GetComponent<DamageNumberManager>();
         nextCustomerCanvas.OnNextCustomerRequest += OnNextCustomerButtonPressed;
+        bonusCustomerEndCanvas.OnClaimed += OnBonusLevelClaimButtonPressed;
         incrementUpgradeUIManager = GetComponent<IncrementalUpgradeUIManager>();
         screensManager = GetComponent<ScreensManager>();
 
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour
         ingameCanvas.SetActive(false);
         //pauseMenu.SetActive(false);
         nextCustomerCanvas.gameObject.SetActive(false);
+        bonusCustomerEndCanvas.gameObject.SetActive(false);
     }
 
     void Start()
@@ -402,7 +404,7 @@ public class UIManager : MonoBehaviour
         screensManager.HideScreen("bonusCustomer");
     }
 
-    public void OnNextCustomerButtonPressed()
+    public void OnNextCustomerButtonPressed(bool claimBonus = false)
     {
       //  screensManager.ShowScreen("start");
         //screensManager.HideScreen("nextCustomer");
@@ -412,7 +414,11 @@ public class UIManager : MonoBehaviour
 
        // itemUnlockPanel.DisplayItemUnlockPanel(unlockedItemID, //TODO: Buradan devam.
 
-        OnNextCustomer?.Invoke();
+        OnNextCustomer?.Invoke(claimBonus);
+    }
+
+    public void OnBonusLevelClaimButtonPressed() {
+        OnNextCustomerButtonPressed();
     }
 
     public void OnItemUnlockMenuClaimed()
